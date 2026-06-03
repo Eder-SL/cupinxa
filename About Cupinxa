@@ -1,0 +1,35 @@
+function mostrarAboutCupinxa() {
+
+  const logo = `
+                                               ██╗     
+   ██████╗ ██╗   ██╗██████╗ ██╗███╗   ██╗██╗  ██╔╝ █████╗
+  ██╔════╝ ██║   ██║██╔══██╗██║████╗  ██║╚██╗██╔╝██╔══██║
+  ██║      ██║   ██║██████╔╝██║██╔██╗ ██║ ╚███╔╝ ███████║
+  ██║      ██║   ██║██╔═══╝ ██║██║╚██╗██║ ██╔██╗ ██╔══██║
+  ╚██████╗ ╚██████╔╝██║     ██║██║ ╚████║██╔╝ ██╗██║  ██║
+   ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═══██╔╝  ╚═╝╚═╝  ╚═╝
+                                       ██╔╝
+                                       ╚═╝       1.0 
+  `;
+
+  const info = `
+CUPINXA SYSTEM v1.0
+────────────────────────────
+IDEIA: Tema Terminal Hacker
+Arquitetura: Casca + IA externa
+
+STATUS: OPERACIONAL
+IA CORE: NÃO CONECTADO
+AUTOR: ED-PIGLET
+PROJETO: CUPINXA
+CONTATO: edersl.sl@gmail.com
+`;
+
+  // mostra logo (com pre)
+  mostrarLogoPre(logo);
+
+  // mostra info normal (linha a linha)
+  info.split("\n").forEach(linha => {
+    adicionarLinha(linha);
+  });
+}

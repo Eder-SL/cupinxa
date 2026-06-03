@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Cupinxa</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <div>CUPINXA</div>
+      <div class="status">
+		  <span>F5: CLEAR</span>
+		  <span id="mode" onclick="toggleMenu()">MODE: AUTO</span>
+
+<div id="menuModo" class="menu hidden">
+  <div onclick="alterarModo('AUTO')">AUTO</div>
+  <div onclick="alterarModo('FAST')">FAST</div>
+  <div onclick="alterarModo('DEEP')">DEEP</div>
+</div>
+</div>
+    </div>
+
+    <div class="terminal">
+  <div class="console">
+
+    <!-- SAÍDA -->
+    <div id="output"></div>
+
+    <!-- INPUT -->
+    <div class="input-line">
+      <span id="addFile" onclick="abrirUpload()">+</span>
+      <span>> </span>
+      <div id="command" contenteditable="true"></div>
+      <input type="file" id="fileInput" style="display:none;" />
+    </div>
+
+  </div>
+</div>
+
+
+  </div>
+
+  <!-- ✅ JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>

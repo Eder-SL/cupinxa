@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cupinxa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+window.onload = function () {
+
+  function escreverTexto(elemento, texto, velocidade = 40) {
+    let i = 0;
+
+    function digitar() {
+      if (i < texto.length) {
+        elemento.innerHTML += texto.charAt(i);
+        i++;
+        setTimeout(digitar, velocidade);
+      }
+    }
+
+    digitar();
+  }
+
+  document.querySelectorAll(".typewriter").forEach((el, index) => {
+    const texto = el.getAttribute("data-text");
+
+    setTimeout(() => {
+      escreverTexto(el, texto);
+    }, index * 800);
+  });
+
+};
+</script>
+
+<script>
+function copiar(texto) {
+  navigator.clipboard.writeText(texto);
+
+  alert("Código copiado!");
+}
+</script>
+
+<body>
+
+<div class="home-screen">
+
+  <div class="home-content">
+    <pre class="logo">
+                                               ██╗       
+   ██████╗ ██╗   ██╗██████╗ ██╗███╗   ██╗██╗  ██╔╝ █████╗
+  ██╔════╝ ██║   ██║██╔══██╗██║████╗  ██║╚██╗██╔╝██╔══██║
+  ██║      ██║   ██║██████╔╝██║██╔██╗ ██║ ╚███╔╝ ███████║
+  ██║      ██║   ██║██╔═══╝ ██║██║╚██╗██║ ██╔██╗ ██╔══██║
+  ╚██████╗ ╚██████╔╝██║     ██║██║ ╚████║██╔╝ ██╗██║  ██║
+   ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═══██╔╝  ╚═╝╚═╝  ╚═╝
+                                       ██╔╝              
+                                       ╚═╝       1.0     
+    </pre>
+    <button class="start-btn" onclick="startSystem()">START</button>
+  </div>
+
+  <div class="updates">
+    <h2>SYSTEM LOG</h2>
+    <p class="typewriter" data-text="dom 15 mai 2026"></p>
+    <p class="typewriter" data-text="- Ideia vira projeto com pesquisas sobre o Tema"></p>
+    <p class="typewriter" data-text="dom 20 mai 2026"></p>
+    <p class="typewriter" data-text="- Primeiros códigos foram testados e outras ideias foram implementadas e o Cupinxa ganha forma"></p>
+    <p class="typewriter" data-text="dom 29 mai 2026"></p>
+    <p class="typewriter" data-text="- IA fake foi testada e a backend foi aprimorada"></p>
+    <p class="typewriter" data-text="- Idéia vira realidade"></p>
+    <p class="typewriter" data-text="dom 29 mai 2026"></p>
+    <p class="typewriter" data-text="- IA real foi integrada"></p>
+    <p class="typewriter" data-text="dom 31 mai 2026"></p>
+    <p class="typewriter" data-text="- Projeto alcança seu estágio 1.0"></p>
+  </div>
+
+<div class="support-section">
+
+  <p class="support-text">
+    MANTENHA A NOSSA IDEIA VIVA
+  </p>
+
+  <div class="donation-bar">
+    <button onclick="copiar('00020126580014br.gov.bcb.pix01369011b8bb-6609-4b98-9371-bafacc7a99f55204000053039865802BR5919EDER SANTANA LEITAO6014Rio de Janeiro62290525mv03x13BhHPFArTLALxuTuOFe63043643')">PIX</button>
+    <button onclick="copiar('lnbc1p4pcc5npp5jpjurucmkrvy4t2ukwc4zs9z95k0xnavm24qllnd7d6r3xxltl3qdqqcqzzsxqrrsssp5kdkcyy7zfzs2g076j57lp9xswsl4kes620hud5jmc65z6hd0csns9qxpqysgq598y77ejhmr26uq9ly85j32ttznl23cpeh4ejhjq8adpnrv67wdnmsc9s84sqznv0965plpmhqswawgwghhflctpquy75dyx8627gaqqwy9upc')">BTC LN</button>
+    <button onclick="copiar('bc1qkusywfutff9stakumqu979quf2ss5ggnm5gxm7')">BTC</button>
+    <button onclick="copiar('0x39a6804559cE776ED7269b27f6D51bD12DDfFEC9')">USDT</button>
+  </div>
+
+</div>
+
+
+<script>
+function startSystem() {
+  window.location.href = "cupinxa.html";
+}
+</script>
+
+</body>
+</html>

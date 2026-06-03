@@ -1,0 +1,391 @@
+body {
+  background: radial-gradient(circle, #001100, #000000);
+  color: #00ff00;
+  font-family: Consolas, monospace;
+  margin: 0;
+
+}
+
+
+/* Container geral */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Header estilo painel */
+.header {
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+
+/* Status */
+.status span {
+
+  margin-left: 15px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+
+}
+
+
+
+.terminal {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+
+}
+
+
+
+#output {
+  max-width: 800px;   /* controla largura */
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+``
+
+#cursor {
+  display: inline-block;
+  color: #00ff00;
+  font-weight: bold;
+
+  animation: piscar 1s steps(2, start) infinite;
+
+  min-width: 10px; /* garante espaço visível */
+}
+
+#command {
+  background: transparent;
+  color: #00ff00;
+  outline: none;
+  flex-grow: 1;
+  min-width: 10px;
+  font-family: inherit;
+  white-space: nowrap;
+  flex-grow: 1;
+  min-width: 50px;
+  overflow: hidden;
+  height: 20px;
+  line-height: 20px;
+  display: inline-block;
+  min-height: 20px;
+  vertical-align: middle;
+  
+
+  caret-color: #00ff00; /* 🔥 cursor verde */
+  text-shadow: 0 0 3px #00ff00;
+}
+
+
+#command:focus {
+  outline: none;
+}
+
+
+/* Glow controlado (melhor que aplicar no body inteiro) */
+#output, #command, .header {
+  text-shadow: 0 0 5px #00ff00;
+}
+
+
+@keyframes piscar {
+
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 1px); }
+  75% { transform: translate(1px, 1px); }
+  100% { transform: translate(0px, 0px); }
+
+}
+
+.menu {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+
+  background: black;
+  border: 1px solid #00ff00;
+  padding: 10px;
+
+  font-family: Consolas, monospace;
+  color: #00ff00;
+
+  box-shadow: 0 0 10px #00ff00;
+}
+
+.menu div {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.menu div:hover {
+  background: #003300;
+}
+
+.hidden {
+  display: none;
+}
+
+#addFile {
+  color: #00ff00;
+  cursor: pointer;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+#addFile:hover {
+  text-shadow: 0 0 5px #00ff00;
+}
+
+pre {
+  font-family: Consolas, monospace;
+  color: #00ff00;
+  margin: 0;
+  line-height: 1.1;
+}
+``
+
+.console {
+  max-width: 800px;
+  margin: 0;
+}
+
+<style>
+</style> 
+
+/* ===== HOME (Nova página inicial) ===== */
+
+.home-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  pointer-events: none; /* 🔥 importante */
+}
+
+
+/* Botão */
+.start-btn {
+  margin-top: 40px;
+  padding: 15px 60px;
+  background: transparent;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-shadow: 0 0 6px #00ff00;
+}
+
+.start-btn:hover {
+  background: #00ff00;
+  color: black;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+/* Updates */
+.updates {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  border-left: 1px solid #00ff00;
+  padding: 20px;
+}
+
+.updates h2 {
+  margin-bottom: 15px;
+}
+
+/* Rodapé */
+.footer {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 11px;
+  opacity: 0.7;
+  max-width: 400px;
+}
+
+/* Centraliza só logo e botão */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  
+  pointer-events: all;
+  transform: translateY(250px)
+}
+``
+``
+/* Botão mais chamativo */
+.start-btn {
+  padding: 20px 120px;
+  font-size: 30px;
+}
+
+/* Updates fixo na lateral (melhorado) */
+.updates {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 280px;
+  height: 100vh;
+  padding: 30px;
+  background: rgba(0,0,0,0.75);
+  border-left: 1px solid #00ff00;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Rodapé fixo */
+.footer {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  max-width: 400px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* ===== SCROLL ESTILIZADO ===== */
+
+.updates::-webkit-scrollbar {
+  width: 6px;
+}
+
+.updates::-webkit-scrollbar-thumb {
+  background: #00ff00;
+  border-radius: 5px;
+}
+
+.updates::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.donation-bar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  display: flex;
+  gap: 10px;
+}
+
+.donation-bar button {
+  padding: 8px 15px;
+  border: 1px solid #00ff00;
+  background: transparent;
+  color: #00ff00;
+  font-family: Consolas, monospace;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.donation-bar button:hover {
+  background: #00ff00;
+  color: black;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+/* ===== BLOCO DE SUPORTE ===== */
+
+.support-section {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 15px;
+
+  z-index: 1000;
+}
+
+/* Texto */
+.support-text {
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.8;
+  line-height: 1.4;
+  text-shadow: 0 0 6px #00ff00;
+  
+  margin: 0;
+}
+
+/* Botões alinhados */
+.donation-bar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  
+  position: static;
+}
+
+/* Botões estilo */
+.donation-bar button {
+  padding: 8px 15px;
+  border: 1px solid #00ff00;
+  background: transparent;
+  color: #00ff00;
+  font-family: Consolas, monospace;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.donation-bar button:hover {
+  background: #00ff00;
+  color: black;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+pre.logo {
+  font-size: 18px;
+  transform: scale(1.5);
+  transform-origin: center;
+  text-shadow: 0 0 6px #00ff00;
+
+  line-height: 1.2;
+  text-align: center;
+
+  margin-bottom: 40px;
+}
+
+
+``
+``
+
+
