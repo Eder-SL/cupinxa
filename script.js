@@ -213,7 +213,7 @@ CONTATO: eder.sl.1993@gmail.com
 
 async function consultarIA(pergunta) {
 
-  const response = await fetch("http://localhost:3000/ia", {
+  const response = await fetch("https://cupinxa-backend.onrender.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
